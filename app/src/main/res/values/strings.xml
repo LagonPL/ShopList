@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ShopList</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="password_hint">Hasło</string>
+    <string name="email_hint">Email</string>
+    <string name="sign_up_button_label">Rejestracja</string>
+    <string name="signup_error_message">Wpisz poprawny email oraz hasło</string>
+    <string name="signup_error_title">Bład!</string>
+    <string name="signup_success">Konto zostało utworzone. Możesz teraz się zalogować</string>
+    <string name="login_error_message">Wpisz poprawny email oraz hasło!</string>
+    <string name="login_error_title">Bład!</string>
+    <string name="login_button_label">Logowanie</string>
+    <string name="sign_up_text">Rejestracja</string>
+    <string name="title_activity_login">Loguj</string>
+    <string name="add_item">Dodaj</string>
+    <string name="action_logout">Wyloguj</string>
+</resources>
