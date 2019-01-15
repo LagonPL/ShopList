@@ -13,5 +13,8 @@
     <string name="sign_up_text">Rejestracja</string>
     <string name="title_activity_login">Loguj</string>
     <string name="add_item">Dodaj</string>
+    <string name="add_friend">Dodaj znajomego</string>
     <string name="action_logout">Wyloguj</string>
+    <string name="action_friends">Znajomi</string>
+
 </resources>

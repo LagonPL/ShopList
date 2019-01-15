@@ -140,6 +140,10 @@ public class MainActivity extends AppCompatActivity {
             mFirebaseAuth.signOut();
             loadLogInView();
         }
+        else if(id == R.id.action_friends){
+            Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
