@@ -16,5 +16,10 @@
     <string name="add_friend">Dodaj znajomego</string>
     <string name="action_logout">Wyloguj</string>
     <string name="action_friends">Znajomi</string>
+    <string name="title_give">Nazwa produktu</string>
+    <string name="amount_give">Ilość</string>
+    <string name="refresh">Odśwież</string>
+
+
 
 </resources>

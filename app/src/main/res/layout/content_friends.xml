@@ -37,7 +37,7 @@
         android:orientation="vertical"
         android:layout_gravity="bottom">
         <EditText
-            android:id="@+id/todoText"
+            android:id="@+id/TitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button

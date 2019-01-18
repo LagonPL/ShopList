@@ -53,13 +53,17 @@ public class MainActivity extends AppCompatActivity {
             listView.setAdapter(adapter);
 
             // Add items via the Button and EditText at the bottom of the view.
-            final EditText text = (EditText) findViewById(R.id.todoText);
+            final EditText textTitle = (EditText) findViewById(R.id.TitleText);
+            final EditText textAmount = (EditText) findViewById(R.id.AmountText);
             final Button button = (Button) findViewById(R.id.addButton);
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Item item = new Item(text.getText().toString());
+                    Item item = new Item(textTitle.getText().toString(), textAmount.getText().toString());
                     mDatabase.child("users").child(mUserId).child("items").push().setValue(item);
-                    text.setText("");
+
+
+                    textTitle.setText("");
+                    textAmount.setText("");
                 }
             });
 
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             mDatabase.child("users").child(mUserId).child("items").addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    adapter.add((String) dataSnapshot.child("title").getValue());
+                    adapter.add((String) dataSnapshot.child("title").getValue()+" "+dataSnapshot.child("amount").getValue());
                 }
 
                 @Override
@@ -77,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
-                    adapter.remove((String) dataSnapshot.child("title").getValue());
+                    adapter.remove((String) dataSnapshot.child("title").getValue()+" "+dataSnapshot.child("amount").getValue());
+                    //adapter.remove((String) dataSnapshot.child("title").getValue());
                 }
 
                 @Override
@@ -94,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     mDatabase.child("users").child(mUserId).child("items")
                             .orderByChild("title")
-                            .equalTo((String) listView.getItemAtPosition(position))
+                            .equalTo(Util.TitleCustom((String) listView.getItemAtPosition(position)))
                             .addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -143,10 +148,14 @@ public class MainActivity extends AppCompatActivity {
         else if(id == R.id.action_friends){
             Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
             startActivity(intent);
+
+        }
+        else if(id == R.id.action_refresh){
+            finish();
+            startActivity(getIntent());
         }
 
         return super.onOptionsItemSelected(item);
     }
-
 
 }
