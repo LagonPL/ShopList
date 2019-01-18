@@ -2,7 +2,7 @@
 Aplikacja z Listą Zakupów. W domyśle dzielona między znajomymi użytkownikami
 
 ## Firebase Rules
-...
+```
 {
   "rules": {
     "users": {
@@ -23,4 +23,4 @@ Aplikacja z Listą Zakupów. W domyśle dzielona między znajomymi użytkownikam
     }
   }
 }
-...
+```
