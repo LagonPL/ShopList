@@ -25,7 +25,7 @@
         android:textStyle="bold" />
 
     <ListView
-    android:id="@+id/listView"
+    android:id="@+id/friendslist"
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="1">
@@ -55,7 +55,7 @@
                 android:text="@string/add_friend" />
 
             <Button
-                android:id="@+id/deteleButton"
+                android:id="@+id/DeleteButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

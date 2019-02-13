@@ -32,12 +32,26 @@
         android:inputType="textPassword"
         android:hint="@string/password_hint" />
 
+    <EditText
+        android:id="@+id/nicknameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailField"
+        android:layout_alignLeft="@+id/emailField"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:hint="@string/nickname"
+        android:inputType="text" />
+
     <Button
         android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/passwordField"
         android:layout_below="@+id/passwordField"
+        android:layout_alignLeft="@+id/passwordField"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="54dp"
         android:text="@string/sign_up_button_label" />
 
 </RelativeLayout>

@@ -19,6 +19,8 @@
     <string name="title_give">Nazwa produktu</string>
     <string name="amount_give">Ilość</string>
     <string name="refresh">Odśwież</string>
+    <string name="nickname">Pseudonim</string>
+
 
 
 </resources>
