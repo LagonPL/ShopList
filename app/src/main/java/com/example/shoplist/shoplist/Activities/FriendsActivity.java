@@ -1,7 +1,9 @@
-package com.example.shoplist.shoplist;
+package com.example.shoplist.shoplist.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.shoplist.shoplist.R;
 
 public class FriendsActivity extends AppCompatActivity {
 

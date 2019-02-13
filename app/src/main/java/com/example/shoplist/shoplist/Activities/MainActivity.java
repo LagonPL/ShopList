@@ -1,4 +1,4 @@
-package com.example.shoplist.shoplist;
+package com.example.shoplist.shoplist.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.shoplist.shoplist.Item;
+import com.example.shoplist.shoplist.R;
+import com.example.shoplist.shoplist.Util;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
