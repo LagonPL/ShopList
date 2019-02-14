@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             final ListView listView = (ListView) findViewById(R.id.listView);
             final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
             listView.setAdapter(adapter);
-
             // Add items via the Button and EditText at the bottom of the view.
             final EditText textTitle = (EditText) findViewById(R.id.TitleText);
             final EditText textAmount = (EditText) findViewById(R.id.AmountText);
@@ -121,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-
     private void loadLogInView() {
         Intent intent = new Intent(this, LogInActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

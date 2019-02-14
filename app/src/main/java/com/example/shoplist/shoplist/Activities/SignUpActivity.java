@@ -39,10 +39,10 @@ public class SignUpActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        passwordEditText = (EditText)findViewById(R.id.passwordField);
-        emailEditText = (EditText)findViewById(R.id.emailField);
-        signUpButton = (Button)findViewById(R.id.signupButton);
-        nicknameText = (EditText)findViewById(R.id.nicknameField);
+        passwordEditText = (EditText) findViewById(R.id.passwordField);
+        emailEditText = (EditText) findViewById(R.id.emailField);
+        signUpButton = (Button) findViewById(R.id.signupButton);
+        nicknameText = (EditText) findViewById(R.id.nicknameField);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,16 +66,12 @@ public class SignUpActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                             //           mFirebaseAuth = FirebaseAuth.getInstance();
+                                        //           mFirebaseAuth = FirebaseAuth.getInstance();
                                         mFirebaseUser = mFirebaseAuth.getCurrentUser();
                                         mUserId = mFirebaseUser.getUid();
                                         String name = nicknameText.getText().toString();
-                                        Log.d("test",name);
+                           //             Log.d("test", name);
                                         mDatabase.child("users").child(mUserId).child("nickname").push().setValue(name);
-
-
-
-
                                         Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -93,6 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
 }

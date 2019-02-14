@@ -20,6 +20,12 @@
     <string name="amount_give">Ilość</string>
     <string name="refresh">Odśwież</string>
     <string name="nickname">Pseudonim</string>
+    <string name="uncorrecttext">Nieprawidlowe dane!</string>
+    <string name="readerror">Błąd pobierania z bazy!</string>
+    <string name="adderror">Błąd dodawania do bazy!</string>
+    <string name="deleteerror">Błąd usuwania z bazy!</string>
+
+
 
 
 
