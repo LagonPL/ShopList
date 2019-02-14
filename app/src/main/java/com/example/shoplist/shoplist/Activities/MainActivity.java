@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             mDatabase.child("users").child(mUserId).child("items").addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    adapter.add((String) dataSnapshot.child("title").getValue()+" "+dataSnapshot.child("amount").getValue());
+                    adapter.add((String) dataSnapshot.child("title").getValue()+"\u2063 "+dataSnapshot.child("amount").getValue());
                 }
 
                 @Override
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
-                    adapter.remove((String) dataSnapshot.child("title").getValue()+" "+dataSnapshot.child("amount").getValue());
+                    adapter.remove((String) dataSnapshot.child("title").getValue()+"\u2063 "+dataSnapshot.child("amount").getValue());
                     //adapter.remove((String) dataSnapshot.child("title").getValue());
                 }
 

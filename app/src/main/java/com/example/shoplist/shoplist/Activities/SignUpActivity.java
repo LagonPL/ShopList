@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.shoplist.shoplist.R;
+import com.example.shoplist.shoplist.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -49,7 +50,6 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String password = passwordEditText.getText().toString();
                 String email = emailEditText.getText().toString();
-
                 password = password.trim();
                 email = email.trim();
 
@@ -66,12 +66,17 @@ public class SignUpActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        //           mFirebaseAuth = FirebaseAuth.getInstance();
                                         mFirebaseUser = mFirebaseAuth.getCurrentUser();
                                         mUserId = mFirebaseUser.getUid();
                                         String name = nicknameText.getText().toString();
-                           //             Log.d("test", name);
                                         mDatabase.child("users").child(mUserId).child("nickname").push().setValue(name);
+                                        User user = new User(mUserId,name);
+                                        mDatabase.child("nicknames").push().setValue(user);
+                                       // mDatabase.child("nicknames").child(mUserId).child("nickname").push().setValue(user);
+                                        Log.d("testujemy3", user.toString());
+
+//                                        User user = new User(textTitle.getText().toString(), textAmount.getText().toString());
+
                                         Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

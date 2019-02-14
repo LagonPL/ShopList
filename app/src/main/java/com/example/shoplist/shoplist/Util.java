@@ -15,7 +15,7 @@ public class Util {
     }
 
     public static String TitleCustom(String itemText) {
-        int Space = itemText.indexOf(" ");
+        int Space = itemText.indexOf("\u2063");
         String Title = itemText.substring(0, Space);
         return Title;
     }

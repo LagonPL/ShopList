@@ -23,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FriendsActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
@@ -30,6 +32,7 @@ public class FriendsActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private DatabaseReference mDatabaseUsers;
     private String mUserId;
+
 
 
     protected Button addButton;
@@ -100,7 +103,7 @@ public class FriendsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String friendsmail = friendName.getText().toString();
                 if (!friendsmail.isEmpty()) {
-                 mDatabase.child("users").addListenerForSingleValueEvent(new ValueEventListener(){
+                 mDatabase.child("users").orderByChild("nickname").addListenerForSingleValueEvent(new ValueEventListener(){
                      @Override
                      public void onDataChange(DataSnapshot dataSnapshot) {
                          Log.d("testujemy2", dataSnapshot.getValue().toString());
