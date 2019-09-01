@@ -24,3 +24,52 @@ Aplikacja z Listą Zakupów. W domyśle dzielona między znajomymi użytkownikam
   }
 }
 ```
+```
+{
+  "rules": {
+   	"nicknames": {
+      "$nick_id":{
+        "key" :{
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "nickname":{
+          ".validate": "newData.isString() && newData.val().length > 0"
+        }
+      }
+    }, 
+    
+    "users": {
+        ".read": true,
+        ".write": true,
+      "$uid": {
+        ".read": true,
+        ".write": true,
+          
+        "nickname" : {
+          "$nickname_id":{
+            ".validate": "newData.isString() && newData.val().length > 0"
+          }
+        },
+          
+        "items": {
+          "$item_id": {
+            "title": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            },
+            "amount": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            }
+          }
+        },
+          
+        "friends": {
+          "$friend_id": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            },
+        }
+        
+      }
+    }
+  }
+}
+```
